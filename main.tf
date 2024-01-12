@@ -1,5 +1,5 @@
 resource "aws_launch_configuration" "web_server_as" {
-    image_id           = "ami-00b8917ae86a424c9"
+    image_id           = "ami-0c84181f02b974bc3"
     instance_type = "t2.micro"
     key_name = "ansible-kp"
 }
@@ -9,7 +9,7 @@ resource "aws_launch_configuration" "web_server_as" {
   resource "aws_elb" "web_server_lb"{
      name = "web-server-lb"
      security_groups = [aws_security_group.web_server.id]
-     subnets = ["subnet-06bf36ef35554f526", "subnet-04215682caa464cc3"]
+     subnets = ["subnet-0062e35c68b381607"]
      listener {
       instance_port     = 8000
       instance_protocol = "http"
